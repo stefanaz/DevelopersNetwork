@@ -205,7 +205,7 @@ export const deleteEducation = id => async dispatch => {
 export const deleteAccount = id => async dispatch => {
   if (window.confirm("Are you sure? ")) {
     try {
-      const res = await axios.delete("/api/profile");
+      await axios.delete("/api/profile");
       dispatch({ type: CLEAR_PROFILE });
       dispatch({ type: ACCOUNT_DELETED });
       dispatch(setAlert("Profile and account Removed", "success"));
